@@ -7,6 +7,13 @@
 ---|---
 tinysite | 微站，网站的核心
 
+# 环境
+python 3.6.5
+
+## 安装项目依赖的python包
+
+    pip install -r requirements.txt
+
 
 # 源码工程创建过程
 

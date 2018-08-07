@@ -1,0 +1,7 @@
+# 要求的python包
+
+-i https://pypi.tuna.tsinghua.edu.cn/simple
+django==2.0.5
+django-markdown-deux
+mysqlclient
+
