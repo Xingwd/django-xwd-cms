@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+{% extends 'tinysite/base.html' %}
+<!-- 加载static目录 -->
+{% load static %}
+
+<head>
+    {% block title %}
+    <title>邢为栋的小站</title>
+    {% endblock %}
+
+    {% block extra %}
+    {% endblock %}
+</head>
+
+{% block body %}
+<body>
+
+<!-- header -->
+<div class="header" style="background-image: url({% static 'tinysite/images/header-background.jpg' %})">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="headertxt">
+                    <h1>你好，我是邢为栋</h1>
+                    <h2>欢迎来到我的小站</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 主要内容 -->
+<main class="jumbotron" role="main" style="margin-bottom:0">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="maintxt">
+                    <h2><img src="{% static 'tinysite/images/title.png' %}"> 关于小站</h2>
+                    <p>小站建设是为了学以致用，同时致力于传播IT相关知识，将所学所得编写成教程和经验，发布到小站，希望可以对光临小站的朋友有所帮助。</p>
+                    <p>小站并非专业的教学网站，站内教程和经验仅供参考。小站教程的创作初衷是整理学习资料的同时，希望能够为同学者提供一些帮助。</p>
+                    <p>贡献我的一份力，愿与君共勉！</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12">
+                <div class="maintxt">
+                    <h2><img src="{% static 'tinysite/images/title.png' %}"> 站长信条</h2>
+                    <p>上善若水。森罗万象。格物致知。</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12" style="margin-top:30px">
+                <div class="maintxt">
+                    <h2><img src="{% static 'tinysite/images/title.png' %}"> 小站内容</h2>
+                    {% for category in category_list %}
+                    <div class="col-xs-12 col-sm-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    {{ category.category_name }}
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table">
+                                    {% for course in category.course_set.all %}
+                                    <tr><td>
+                                        <h4><a href="{% url 'tinysite:course' course.id %}">{{ course.course_name }}</a></h4>
+                                        <p>{{ course.course_description }}</p>
+                                    </td></tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<!-- 页尾-->
+<div class="jumbotron text-center" style="margin-bottom:0; background:#202020; color:#959595">
+  <ul class="nav nav-pills nav-stacked">
+                <li><a href="https://github.com/Xingwd">欢迎关注我的GitHub</a></li>
+                <!-- <li><a href="#">链接 2</a></li>
+                <li><a href="#">链接 3</a></li> -->
+  </ul>
+</div>
+
+</body>
+{% endblock %}
+
+</html>

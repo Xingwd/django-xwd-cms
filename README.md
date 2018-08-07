@@ -26,3 +26,5 @@ tinysite | 微站，网站的核心
 
         python manage.py startapp tinysite
 
+编写应用。
+

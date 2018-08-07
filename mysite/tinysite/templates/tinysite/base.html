@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!-- 加载static目录 -->
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <!-- IE8 的兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 为移动端窗口优化 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block title %}
+    <title>邢为栋的小站</title>
+    {% endblock %}
+
+    <meta name="description" content="小站用于发布个人整理的学习教程和经验，以及其他爱好的东西。" />
+    <!-- 告诉浏览器页面是否为手持设备优化，会被MobileOptimized覆盖 -->
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+
+    <!-- 引入 Bootstrap 3.3.7 -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'tinysite/css/style.min.css' %}" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery (Bootstrap 插件需要引入) -->
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 包含了所有编译插件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- 为重复的网址或版本指定权威网页 -->
+    <link rel="canonical" href="http://www.xingweidong.com/" />
+    <!-- 参考https://support.google.com/webmasters/answer/1663744?hl=zh-Hans -->
+    <link rel="next" href="http://www.xingweidong.com/page/2/" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'tinysite/assets/ico/taiji.png' %}">
+    <link rel="shortcut icon" href="{% static 'tinysite/assets/ico/taiji.png' %}">
+
+    {% block extra %}
+    {% endblock %}
+</head>
+{% block body %}
+{% endblock %}
+</html>
