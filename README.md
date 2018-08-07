@@ -1,5 +1,11 @@
-# tinysite
-我的网站——微站。使用Django框架。
+# website
+我的网站。使用Django框架。
+
+项目——mysite。
+
+应用 | 说明
+---|---
+tinysite | 微站，网站的核心
 
 
 # 源码工程创建过程
