@@ -26,7 +26,8 @@ SECRET_KEY = '4#ip*j=6!q#0gdvj4f^n7i7tiu)x457&hc2z1b=v)fr)v5g=s0'
 DEBUG = True
 
 # 不添加主机，会报错
-ALLOWED_HOSTS = ['www.xingweidong.com',]
+ALLOWED_HOSTS = ['127.0.0.1',
+                 'www.xingweidong.com',]
 
 
 # Application definition

@@ -27,10 +27,10 @@
                     <h3>{{ course.course_name }}</h3>
                 <ul class="nav nav-pills">
                     <!-- 打开页面后，默认显示教程第一章节。 标签 -->
-                    <li><a href="#{{ course.chapter_set.all.0.id }}" data-toggle="tab">{{ course.chapter_set.all.0.chapter_title }}</a></li>
+                    <li class="chapter-title"><a href="#{{ course.chapter_set.all.0.id }}" data-toggle="tab">{{ course.chapter_set.all.0.chapter_title }}</a></li>
                     <!-- 对章节列表进行切片，从第二章节开始遍历。 标签 -->
                     {% for chapter in course.chapter_set.all|slice:"1:" %}
-                    <li><a href="#{{ chapter.id }}" data-toggle="tab">{{ chapter.chapter_title }}</a></li>
+                    <li class="chapter-title"><a href="#{{ chapter.id }}" data-toggle="tab">{{ chapter.chapter_title }}</a></li>
                     {% endfor %}
                 </ul>
                 </div>
