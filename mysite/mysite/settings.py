@@ -132,3 +132,6 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
+
+# 部署静态文件配置
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
