@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # 或者使用 mysql.connector.django
-        'NAME': 'tinysite',
+        'NAME': 'mysite',
         'USER': 'xingweidong',
-        'PASSWORD': 'tinysite',
+        'PASSWORD': 'mysite',
         'HOST': 'localhost',
         'PORT': '3306',
     }
