@@ -172,7 +172,8 @@ centos:
 ## 基本的nginx测试
 重启nginx:
 
-    sudo /etc/init.d/nginx restart
+    ubuntu: sudo /etc/init.d/nginx restart
+    centos: systemctl restart nginx
 
 > 这里注意关闭selinux
 
