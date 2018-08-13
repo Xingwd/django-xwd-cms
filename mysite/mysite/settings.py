@@ -137,3 +137,25 @@ STATICFILES_FINDERS = [
 
 # 部署静态文件配置
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
+
+# django-markdown-deux 配置
+MARKDOWN_DEUX_STYLES = {
+    "default": {
+        "extras": {
+            "code-friendly": None,
+            "cuddled-lists": None,
+            "footnotes": None,
+            "fenced-code-blocks": None,
+            "header-ids": None,
+            "metadata": None,
+            "nofollow": None,
+            "numbering": None,
+            "pyshell": None,
+            "toc": None,
+            "tables": None,
+            "wiki-tables": None,
+        },
+        "safe_mode": "escape",
+    },
+}

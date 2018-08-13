@@ -12,7 +12,7 @@
     {% endblock %}
 
     {% block extra %}
-    <link rel="stylesheet" type="text/css" href="{% static 'tinysite/css/custom-markdown.css' %}" />
+    <script src="https://cdn.bootcss.com/showdown/1.8.6/showdown.js"></script>
     {% endblock %}
 </head>
 
@@ -39,15 +39,17 @@
             </nav>
             <div class="col-sm-9 tab-content">
                 <!-- 打开页面后，默认显示教程第一章节。 内容 -->
-                <div id="{{ course.chapter_set.all.0.id }}" class="tab-pane fade in active markdown-body">
-                    <!-- 使用markdown语法解释章节内容-->
-                    {{ course.chapter_set.all.0.chapter_content|markdown }}
+                <div id="{{ course.chapter_set.all.0.id }}" class="tab-pane fade in active markdown2html">
+                    <!-- 使用markdown语法解释章节内容
+                    {{ course.chapter_set.all.0.chapter_content|markdown }}-->
+                    {{ course.chapter_set.all.0.chapter_content }}
                 </div>
                 <!-- 对章节列表进行切片，从第二章节开始遍历。 内容 -->
                 {% for chapter in course.chapter_set.all|slice:"1:" %}
-                <div id="{{ chapter.id }}" class="tab-pane fade markdown-body">
-                    <!-- 使用markdown语法解释章节内容-->
-                    {{ chapter.chapter_content|markdown }}
+                <div id="{{ chapter.id }}" class="tab-pane fade markdown2html">
+                    <!-- 使用markdown语法解释章节内容
+                    {{ chapter.chapter_content|markdown }}-->
+                    {{ chapter.chapter_content }}
                 </div>
                 {% endfor %}
             </div>
@@ -56,6 +58,16 @@
 </div>
 
 </body>
+
+<script type="text/javascript">
+$(document).ready(() => {
+    var src = $('.markdown2html').text()
+    var converter = new showdown.Converter();
+    var html = converter.makeHtml(src);
+    $('.markdown2html').html(html)
+})
+</script>
+
 {% endblock %}
 
 </html>
