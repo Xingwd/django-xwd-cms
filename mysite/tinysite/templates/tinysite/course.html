@@ -28,10 +28,10 @@
                     <h3>{{ course.course_name }}</h3>
                 <ul class="nav nav-pills nav-stacked">
                     <!-- 打开页面后，默认显示教程第一章节。 标签 -->
-                    <li><a href="#{{ course.chapter_set.all.0.id }}" data-toggle="tab">{{ course.chapter_set.all.0.chapter_title }}</a></li>
+                    <li><a href="#0" data-toggle="tab">{{ course.chapter_set.all.0.chapter_title }}</a></li>
                     <!-- 对章节列表进行切片，从第二章节开始遍历。 标签 -->
                     {% for chapter in course.chapter_set.all|slice:"1:" %}
-                    <li><a href="#{{ chapter.id }}" data-toggle="tab">{{ chapter.chapter_title }}</a></li>
+                    <li ><a href="#{{ forloop.counter }}" data-toggle="tab">{{ chapter.chapter_title }}</a></li>
                     {% endfor %}
                 </ul>
                 </div>
@@ -39,13 +39,31 @@
             </nav>
             <div class="col-sm-9 tab-content">
                 <!-- 打开页面后，默认显示教程第一章节。 内容 -->
-                <div id="{{ course.chapter_set.all.0.id }}" class="tab-pane fade in active markdown-body">
+                <div id="0" class="tab-pane fade in active markdown-body">
+                    <!-- 翻页 -->
+                    <ul class="pager">
+                        <li class="previous disabled"><a href="" data-toggle="tab"><span class="glyphicon glyphicon-arrow-left"></span></a></li>
+                        <li class="next"><a href="#1" data-toggle="tab"><span class="glyphicon glyphicon-arrow-right"></span></a></li>
+                    </ul>
                     <!-- 使用markdown语法解释章节内容-->
                     {{ course.chapter_set.all.0.chapter_content|markdown }}
                 </div>
                 <!-- 对章节列表进行切片，从第二章节开始遍历。 内容 -->
                 {% for chapter in course.chapter_set.all|slice:"1:" %}
-                <div id="{{ chapter.id }}" class="tab-pane fade markdown-body">
+                <div id="{{ forloop.counter }}" class="tab-pane fade markdown-body">
+                    <!-- 翻页 -->
+                    {% if forloop.last %}
+                    <!-- 最后一页 -->
+                    <ul class="pager">
+                        <li class="previous"><a href="#{{ forloop.counter|add:-1 }}" data-toggle="tab"><span class="glyphicon glyphicon-arrow-left"></span></a></li>
+                        <li class="next disabled"><a href="" data-toggle="tab"><span class="glyphicon glyphicon-arrow-right"></span></a></li>
+                    </ul>
+                    {% else %}
+                    <ul class="pager">
+                        <li class="previous"><a href="#{{ forloop.counter|add:-1 }}" data-toggle="tab"><span class="glyphicon glyphicon-arrow-left"></span></a></li>
+                        <li class="next"><a href="#{{ forloop.counter|add:+1 }}" data-toggle="tab"><span class="glyphicon glyphicon-arrow-right"></span></a></li>
+                    </ul>
+                    {% endif %}
                     <!-- 使用markdown语法解释章节内容-->
                     {{ chapter.chapter_content|markdown }}
                 </div>
