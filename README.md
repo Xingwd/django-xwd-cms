@@ -1,4 +1,4 @@
-# mycms
+# xwd-cms
 我的CMS。使用Django框架。
 
 项目——mysite。
