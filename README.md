@@ -1,5 +1,5 @@
-# website
-我的网站。使用Django框架。
+# mycms
+我的CMS。使用Django框架。
 
 项目——mysite。
 
