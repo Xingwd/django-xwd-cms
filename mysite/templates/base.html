@@ -47,6 +47,40 @@
     {% block extra %}
     {% endblock %}
 </head>
-{% block body %}
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://127.0.0.1:8000/">Tinysite</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+          <li class="active"><a href="http://127.0.0.1:8000/"><span class="glyphicon glyphicon-home"></span></a></li>
+          {% for category in categories %}
+          <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                  {{ category.name }}<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                  {% for column in category.column_set.all %}
+                  {% if column in nav_display_columns %}
+                  <!--<li><a href="{{ column.get_absolute_url }}"> {{ column.name }} </a></li>-->
+                  <li><a href="{{ column.article_set.all.0.get_absolute_url }}"> {{ column.name }} </a></li>
+                  {% endif %}
+                  {% endfor %}
+              </ul>
+          </li>
+          {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
+{% block content %}
 {% endblock %}
+</body>
 </html>

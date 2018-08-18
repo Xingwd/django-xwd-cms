@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-{% extends 'tinysite/base.html' %}
+{% extends 'base.html' %}
 <!-- 加载static目录 -->
 {% load static %}
 
@@ -13,8 +13,8 @@
     {% endblock %}
 </head>
 
-{% block body %}
 <body>
+{% block content %}
 
 <!-- header -->
 <div class="header" style="background-image: url({% static 'tinysite/images/header-background.jpg' %})">
@@ -48,33 +48,6 @@
                     <p>上善若水。森罗万象。格物致知。</p>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12" style="margin-top:30px">
-                <div class="maintxt">
-                    <h2><img src="{% static 'tinysite/images/title.png' %}"> 小站内容</h2>
-                    {% for category in category_list %}
-                    <div class="col-xs-12 col-sm-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">
-                                    {{ category.category_name }}
-                                </h3>
-                            </div>
-                            <div class="panel-body">
-                                <table class="table">
-                                    {% for course in category.course_set.all %}
-                                    <tr><td>
-                                        <h4><a href="{% url 'tinysite:course' course.id %}">{{ course.course_name }}</a></h4>
-                                        <p>{{ course.course_description }}</p>
-                                    </td></tr>
-                                    {% endfor %}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
         </div>
     </div>
 </main>
@@ -89,7 +62,7 @@
   </ul>
 </div>
 
-</body>
 {% endblock %}
+</body>
 
 </html>

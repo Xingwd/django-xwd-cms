@@ -1,11 +1,15 @@
+'''
+相关资料：
+https://docs.djangoproject.com/zh-hans/2.0/topics/http/urls/
+'''
+
 from django.urls import path
 
 from . import views
 
 app_name = 'tinysite'
 urlpatterns = [
-    # ex: /tinysite/
-    path('', views.IndexView.as_view(), name='index'),
-    # ex: /tinysite/1/
-    path('<int:pk>/', views.CourseView.as_view(), name='course'),
+    path('', views.index, name='index'),
+    # path('column/<slug:column_slug>/', views.column_detail, name='column'),
+    path('column/<slug:column_slug>/<slug:article_slug>', views.article_detail, name='article'),
 ]

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+{% extends 'base.html' %}
+<!-- 加载static目录 -->
+{% load static %}
+
+<head>
+    {% block title %}
+    <title>邢为栋的小站</title>
+    {% endblock %}
+
+    {% block extra %}
+    {% endblock %}
+</head>
+
+<body>
+{% block content %}
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <nav class="col-sm-3">
+                <div class="container-fluid">
+                <div class="container-fluid collapse navbar-collapse" data-spy="affix">
+                    <h3>{{ column.name }}</h3>
+                <ul class="nav nav-pills nav-stacked">
+                    {% for article in column.article_set.all %}
+                    <li>
+                        <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                </div>
+                </div>
+            </nav>
+            <div class="col-sm-9">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+</body>
+
+</html>
