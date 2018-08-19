@@ -36,7 +36,12 @@
             </nav>
             <div class="col-sm-9" style="margin-top:50px">
                 <!-- 翻页，内容上面 -->
-                {% if previous_article is None %}
+                {% if previous_article is None and next_article is None %}
+                <ul class="pager">
+                    <li class="previous disabled"><a href=""><span class="glyphicon glyphicon-chevron-left"></span> 前面没有了</a></li>
+                    <li class="next disabled"><a href="">后面没有了 <span class="glyphicon glyphicon-chevron-right"></span></a></li>
+                </ul>
+                {% elif previous_article is None %}
                 <ul class="pager">
                     <li class="previous disabled"><a href=""><span class="glyphicon glyphicon-chevron-left"></span> 前面没有了</a></li>
                     <li class="next"><a href="{{ next_article.get_absolute_url }}">{{ next_article.title }} <span class="glyphicon glyphicon-chevron-right"></span></a></li>
@@ -52,12 +57,20 @@
                     <li class="next"><a href="{{ next_article.get_absolute_url }}">{{ next_article.title }} <span class="glyphicon glyphicon-chevron-right"></span></a></li>
                 </ul>
                 {% endif %}
+                <div class="text-center">
+                    更新时间：{{ article.update_time }}
+                </div>
                 <div class="markdown-body">
                     <!-- 使用markdown语法解释章节内容-->
                     {{ article.content|markdown }}
                 </div>
                 <!-- 翻页，内容下面 -->
-                {% if previous_article is None %}
+                {% if previous_article is None and next_article is None %}
+                <ul class="pager">
+                    <li class="previous disabled"><a href=""><span class="glyphicon glyphicon-chevron-left"></span> 前面没有了</a></li>
+                    <li class="next disabled"><a href="">后面没有了 <span class="glyphicon glyphicon-chevron-right"></span></a></li>
+                </ul>
+                {% elif previous_article is None %}
                 <ul class="pager">
                     <li class="previous disabled"><a href=""><span class="glyphicon glyphicon-chevron-left"></span> 前面没有了</a></li>
                     <li class="next"><a href="{{ next_article.get_absolute_url }}">{{ next_article.title }} <span class="glyphicon glyphicon-chevron-right"></span></a></li>

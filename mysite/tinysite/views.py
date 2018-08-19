@@ -39,15 +39,22 @@ def article_detail(request, column_slug, article_slug):
 
     article_list = [ a for a in Article.objects.filter(column=column.id) ]
     current_article_index = article_list.index(article)
-    if current_article_index == 0 :
+
+    if len(article_list) < 2:
         previous_article = None
-        next_article = article_list[1]
-    elif current_article_index > 0 and current_article_index < len(article_list)-1 :
-        previous_article = article_list[current_article_index - 1]
-        next_article = article_list[current_article_index + 1]
-    else :
-        previous_article = article_list[current_article_index - 1]
         next_article = None
+
+    else:
+        if current_article_index == 0:
+            previous_article = None
+            next_article = article_list[1]
+
+        elif current_article_index > 0 and current_article_index < len(article_list) - 1:
+            previous_article = article_list[current_article_index - 1]
+            next_article = article_list[current_article_index + 1]
+        else:
+            previous_article = article_list[current_article_index - 1]
+            next_article = None
 
     return render(request, 'tinysite/article.html', {
         'column': column,

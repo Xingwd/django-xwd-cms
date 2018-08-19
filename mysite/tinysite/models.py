@@ -44,8 +44,8 @@ class Article(models.Model):
     title = models.CharField('标题', max_length=200)
     slug = models.SlugField('网址', max_length=200)
     content = models.TextField('内容', default='')
-    pub_date = models.DateTimeField('发表时间', auto_now_add=True)
-    update_date = models.DateTimeField('更新时间', auto_now=True, null=True)
+    pub_time = models.DateTimeField('发表时间', auto_now_add=True)
+    update_time = models.DateTimeField('更新时间', auto_now=True, null=True)
 
     def __str__(self):
         return self.title

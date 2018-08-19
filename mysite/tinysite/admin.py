@@ -28,10 +28,10 @@ class ArticleAdmin(admin.ModelAdmin):
         ('标题', {'fields': ['title']}),
         ('所属栏目', {'fields': ['column']}),
         ('网址', {'fields': ['slug']}),
-        ('内容', {'fields': ['content']})
+        ('内容', {'fields': ['content']}),
     ]
 
-    list_display = ('title', 'column', 'slug', 'pub_date', 'update_date')
+    list_display = ('title', 'column', 'slug', 'pub_time', 'update_time')
 
     list_filter = ['column']
 
