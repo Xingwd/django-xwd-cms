@@ -12,7 +12,7 @@ python 3.6.5
 
 ## 创建并切换python虚拟开发环境
 
-    pip install virtualenv
+    pip3 install virtualenv
     virtualenv dev
     . ./dev/bin/activate
 
@@ -20,7 +20,7 @@ python 3.6.5
 
 ## 安装项目依赖的python包
 
-    pip install -r requirements.txt
+    pip3 install -r requirements.txt
 
 
 # 源码工程创建过程
@@ -50,7 +50,7 @@ python 3.6.5
 ## 安装uwsgi
 ### 安装uwsgi到你的virtualenv中
 
-    pip install -i https://pypi.tuna.tsinghua.edu.cn/simple uwsgi
+    pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple uwsgi
 
 记住，你将需要安装Python开发包。对于Debian，或者Debian衍生系统，例如Ubuntu，你需要安装的是 pythonX.Y-dev ，其中，X.Y是你Python的版本。
 
@@ -77,7 +77,7 @@ python 3.6.5
 ### 测试你的Django项目
 确保你的Django项目实际上正常工作：
 
-    python manage.py runserver 0.0.0.0:8000
+    python3 manage.py runserver 0.0.0.0:8000
 
 而如果正常，则使用uWSGI来运行它:
 
@@ -166,7 +166,7 @@ centos:
 
 然后运行
 
-    python manage.py collectstatic
+    python3 manage.py collectstatic
 
 
 ## 调整setting.py到生产环境状态
@@ -291,7 +291,7 @@ centos:
 
 然后在系统范围中安装uWSGI:
 
-    sudo pip install uwsgi
+    sudo pip3 install uwsgi
 
     # Or install LTS (long term support).
     pip install http://projects.unbit.it/downloads/uwsgi-lts.tar.gz
