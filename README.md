@@ -171,9 +171,9 @@ centos:
 
 ## 调整setting.py到生产环境状态
 
-    调整 DEBUG=True
+    调整 DEBUG=False
 
-> 默认情况下，DEBUG参数为False，便于开发调试，在生产环境中要调整为True，避免泄露重要信息。
+> 默认情况下，DEBUG参数为True，便于开发调试，在生产环境中要调整为False，避免泄露重要信息。
 
 
 ## 基本的nginx测试
