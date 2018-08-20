@@ -14,7 +14,10 @@
     <title>邢为栋的小站</title>
     {% endblock %}
 
+    <!-- 说明信息 -->
+    <meta name="author" content="邢为栋"/>
     <meta name="description" content="小站用于发布个人整理的学习教程和经验，以及其他爱好的东西。" />
+
     <!-- 告诉浏览器页面是否为手持设备优化，会被MobileOptimized覆盖 -->
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
@@ -26,8 +29,8 @@
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
     <!-- jQuery (Bootstrap 插件需要引入) -->
@@ -60,27 +63,36 @@
       <a class="navbar-brand" href="http://www.xingweidong.com/"><img src="{% static 'tinysite/images/title.png' %}"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-          <li class="active"><a href="http://www.xingweidong.com/"><span class="glyphicon glyphicon-home"></span></a></li>
-          {% for category in categories %}
-          <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                  {{ category.name }}<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                  {% for column in category.column_set.all %}
-                  {% if column in nav_display_columns %}
-                  <!--<li><a href="{{ column.get_absolute_url }}"> {{ column.name }} </a></li>-->
-                  <li><a href="{{ column.article_set.all.0.get_absolute_url }}"> {{ column.name }} </a></li>
-                  {% endif %}
-                  {% endfor %}
-              </ul>
-          </li>
-          {% endfor %}
-      </ul>
+        <ul class="nav navbar-nav">
+            <li><a href="http://www.xingweidong.com/"><span class="glyphicon glyphicon-home"></span></a></li>
+            {% for category in categories %}
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    {{ category.name }}<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    {% for column in category.column_set.all %}
+                    {% if column in nav_display_columns %}
+                    <!--<li><a href="{{ column.get_absolute_url }}"> {{ column.name }} </a></li>-->
+                    <li><a href="{{ column.article_set.all.0.get_absolute_url }}"> {{ column.name }} </a></li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://github.com/Xingwd"><img src="{% static 'tinysite/assets/ico/github24.png' %}"></a></li>
+        </ul>
     </div>
   </div>
 </nav>
 {% block content %}
 {% endblock %}
+
+<!-- 页尾-->
+<div class="jumbotron text-center" style="margin-bottom:0; background:#202020; color:#959595; padding: 20px;">
+  小站提供的内容来自于个人的学习理解，可用于学习参考，但不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。
+</div>
+
 </body>
 </html>

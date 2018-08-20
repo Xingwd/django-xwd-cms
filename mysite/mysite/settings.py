@@ -66,7 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'tinysite.nav_processor.nav',    # 导航栏上下文
+                'tinysite.content_processors.nav',    # 自定义上下文处理器
             ],
         },
     },
