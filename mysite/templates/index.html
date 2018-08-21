@@ -14,47 +14,87 @@
 </head>
 
 <body>
-{% block content %}
 
-<!-- header -->
-<div class="header" style="background-image: url({% static 'tinysite/images/header-background.jpg' %})">
-    <div class="container">
+{% block content %}
+<!-- first -->
+<div class="content" style="background-image: url({% static 'tinysite/images/bg-first.png' %});">
+    <div class="container first">
         <div class="row">
-            <div class="col-xs-12">
-                <div class="headertxt">
-                    <h1>你好，我是邢为栋</h1>
-                    <h2>欢迎来到我的小站</h2>
-                </div>
-            </div>
+            <nav class="col-xs-12">
+                <p><span>心无界 行无疆</span></p>
+            </nav>
+        </div>
+        <div class="row">
+            <nav class="col-xs-12" style="font-size: 20px; padding: 50px 0 0">
+                <p style="text-indent: 8%;">你好，我是邢为栋</p>
+                <p style="text-indent: 12%;">欢迎来到我的小站</p>
+            </nav>
         </div>
     </div>
 </div>
-
-<!-- 主要内容 -->
-<main class="jumbotron" role="main" style="margin-bottom:0">
-    <div class="container">
+<div class="jumbotron" style="margin-bottom:0">
+    <div class="container txt">
         <div class="row">
-            <div class="col-xs-12 col-sm-12">
-                <div class="maintxt">
-                    <h2><img src="{% static 'tinysite/images/title.png' %}"> 站长信条</h2>
-                    <p>心无界，学无疆。</p>
-                    <p>淡泊以明志，宁静以致远。</p>
-                    <p>明心见性，方可逍遥自在。</p>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12">
-                <div class="maintxt">
-                    <h2><img src="{% static 'tinysite/images/title.png' %}"> 关于小站</h2>
-                    <p>小站建设是为了学以致用，同时将所学所得编写成学习笔记和经验，发布到小站，希望可以对光临小站的朋友有所帮助。</p>
-                    <p>小站并非专业的教学网站，站内教程和经验仅供参考。</p>
-                    <p>愿与君共勉！</p>
-                </div>
-            </div>
+            <nav class="col-xs-4">
+                <h1>关于小站</h1>
+            </nav>
+            <nav class="col-xs-8">
+                <p>小站建设是为了学以致用，同时将所学所得编写成学习笔记和经验，发布到小站，希望可以对光临小站的朋友有所帮助。</p>
+                <p>小站并非专业的教学网站，站内内容仅供参考。</p>
+                <p>愿与君共勉！</p>
+            </nav>
         </div>
     </div>
-</main>
-
+</div>
+<!-- second -->
+<div class="content" style="background-image: url({% static 'tinysite/images/bg-second.png' %});">
+    <div class="container second">
+        <div class="row">
+            <nav class="col-xs-12">
+                <p style="text-indent: -12%;">淡泊以明志</p>
+                <p style="text-indent: 12%;">宁静以致远</p>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="jumbotron" style="margin-bottom:0">
+    <div class="container txt">
+        <div class="row">
+            <nav class="col-xs-4">
+                <h1>明心见性</h1>
+            </nav>
+            <nav class="col-xs-8">
+                <p>追逐的心只看到前方</p>
+                <p style="text-indent: 5%;">淡然的心可看到万物</p>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- third -->
+<div class="content" style="background-image: url({% static 'tinysite/images/bg-third.png' %});">
+    <div class="container third">
+        <div class="row">
+            <nav class="col-xs-12">
+                <p>水利万物而不争</p>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="jumbotron" style="margin-bottom:0">
+    <div class="container txt">
+        <div class="row">
+            <nav class="col-xs-4">
+                <h1>上善若水</h1>
+            </nav>
+            <nav class="col-xs-8">
+                <p>至善至柔，无争无为</p>
+                <p style="text-indent: 5%;">心如止水，方可逍遥自在</p>
+            </nav>
+        </div>
+    </div>
+</div>
 {% endblock %}
+
 </body>
 
 </html>

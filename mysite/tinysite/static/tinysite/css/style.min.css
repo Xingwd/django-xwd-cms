@@ -1,52 +1,58 @@
-.header {
-    background:#222;
+.content {
     background-repeat:no-repeat;
     background-position:center 0;
     -webkit-background-size:cover;
     background-size:cover;
-    padding:445px 0 0;
-    text-align:center;
-    min-height:1000px;
+    min-height:800px;
     position:relative
 }
 
-.headertxt {
-    margin-bottom:30px;
-    border:0
+.first {
+    color: white;
+    text-align:left;
+    padding:130px 0 0;
+
 }
 
-.headertxt h1 {
-    font-weight:700;
-    color:#fff;
-    font-size:64px
+.first span {
+    font-family: "Comic Sans MS";
+    font-weight: 700;
+    font-size: 100px;
+    font-style: italic;
+    color: white;
 }
 
-.header h2 {
-    color:#fff;
-    padding:0;
-    margin:0 0 45px;
-    font-weight:100;
-    font-size:34px
+.txt{
+    margin-top: 50px;
+    margin-bottom: 45px;
+
 }
 
-.header .col-sm-6 h2 {
-    margin-top:120px;
+.txt h1, .txt p {
+    font-weight: 700;
 }
 
-.header .col-sm-6 p {
-    color:#fff;
-}
-
-.main {
-    background:#222;
-    background-repeat:no-repeat;
-    background-position:center 0;
-    -webkit-background-size:cover;
-    background-size:cover;
-    position:relative
-}
-
-.maintxt h2 {
+.second {
     text-align:center;
-    margin-bottom:50px;
+    padding:150px 0 0;
+}
+
+.second p {
+    font-family: serif;
+    font-weight: 700;
+    font-size: 60px;
+    font-style: italic;
+    color: white;
+}
+
+.third {
+    text-align:center;
+    padding:250px 0 0;
+}
+
+.third p{
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 60px;
+    color: white;
 }
