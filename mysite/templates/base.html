@@ -72,7 +72,9 @@
                     {% for column in category.column_set.all %}
                     {% if column in nav_display_columns %}
                     <!--<li><a href="{{ column.get_absolute_url }}"> {{ column.name }} </a></li>-->
-                    <li><a href="{{ column.article_set.all.0.get_absolute_url }}"> {{ column.name }} </a></li>
+                    <li><a href="{{ column.article_set.all.0.get_absolute_url }}" class="tooltip-test"
+                           data-toggle="tooltip" data-placement="right" title="{{ column.intro }}">
+                        {{ column.name }} </a></li>
                     {% endif %}
                     {% endfor %}
                 </ul>
