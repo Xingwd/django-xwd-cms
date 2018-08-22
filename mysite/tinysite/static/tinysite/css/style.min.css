@@ -1,10 +1,28 @@
+@-webkit-keyframes fadein {
+    0% {
+        opacity: 0;
+        background-color: #fff;
+    }
+    100% {
+        opacity: 1;
+        background-color:  #fff;
+    }
+}
+
+
 .content {
     background-repeat:no-repeat;
     background-position:center 0;
     -webkit-background-size:cover;
     background-size:cover;
     min-height:800px;
-    position:relative
+    position:relative;
+
+    /* 淡入效果 */
+    -webkit-animation-name: fadein;
+    -webkit-animation-duration: 4s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1; /* 动画只播放一次 */
 }
 
 .first {
