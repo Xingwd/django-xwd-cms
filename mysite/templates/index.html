@@ -10,6 +10,7 @@
     {% endblock %}
 
     {% block extra %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.0/lazysizes.min.js" async=""></script>
     {% endblock %}
 </head>
 
@@ -17,7 +18,7 @@
 
 {% block content %}
 <!-- first -->
-<div class="content" style="background-image: url({% static 'tinysite/images/bg-first.png' %});">
+<div class="content lazyload" data-bg="{% static 'tinysite/images/bg-first.png' %}">
     <div class="container first">
         <div class="row">
             <nav class="col-xs-12">
@@ -47,7 +48,7 @@
     </div>
 </div>
 <!-- second -->
-<div class="content" style="background-image: url({% static 'tinysite/images/bg-second.png' %});">
+<div class="content lazyload" data-bg="{% static 'tinysite/images/bg-second.png' %}">
     <div class="container second">
         <div class="row">
             <nav class="col-xs-12">
@@ -64,14 +65,14 @@
                 <h1>明心见性</h1>
             </nav>
             <nav class="col-xs-8">
-                <p>追逐的心只看到前方</p>
-                <p style="text-indent: 5%;">淡然的心可看到万物</p>
+                <p>追逐之心惟见前方</p>
+                <p style="text-indent: 5%;">淡然之心可见万物</p>
             </nav>
         </div>
     </div>
 </div>
 <!-- third -->
-<div class="content" style="background-image: url({% static 'tinysite/images/bg-third.png' %});">
+<div class="content lazyload" data-bg="{% static 'tinysite/images/bg-third.png' %}">
     <div class="container third">
         <div class="row">
             <nav class="col-xs-12">
@@ -93,6 +94,15 @@
         </div>
     </div>
 </div>
+
+<script>
+document.addEventListener('lazybeforeunveil', function(e){
+    var bg = e.target.getAttribute('data-bg');
+    if(bg){
+        e.target.style.backgroundImage = 'url(' + bg + ')';
+    }
+});
+</script>
 {% endblock %}
 
 </body>
