@@ -27,7 +27,7 @@ DEBUG = True
 
 # 不添加主机，会报错
 ALLOWED_HOSTS = ['127.0.0.1',
-                 '.weidong.com',]
+                 '.xingweidong.com',]
 
 
 # Application definition
