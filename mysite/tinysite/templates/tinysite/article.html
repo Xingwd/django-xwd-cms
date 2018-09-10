@@ -50,7 +50,11 @@
                     {% endif %}
                 </ul>
                 <div class="text-center" style="margin-bottom:25px;">
-                    更新时间：{{ article.update_time }}
+                    <ul class="list-inline">
+                        <li class="list-inline-item">更新时间：{{ article.update_time }}</li>
+                        <li> </li>
+                        <li class="list-inline-item">浏览量：{{ article.views }}</li>
+                    </ul>
                 </div>
                 <div class="markdown-body">
                     <!-- 使用markdown语法解释章节内容-->

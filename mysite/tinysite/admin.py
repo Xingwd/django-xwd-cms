@@ -31,7 +31,7 @@ class ArticleAdmin(admin.ModelAdmin):
         ('内容', {'fields': ['content']}),
     ]
 
-    list_display = ('title', 'column', 'slug', 'pub_time', 'update_time')
+    list_display = ('title', 'column', 'slug', 'views', 'pub_time', 'update_time')
 
     list_filter = ['column']
 

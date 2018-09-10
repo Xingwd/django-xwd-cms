@@ -46,6 +46,7 @@ class Article(models.Model):
     content = models.TextField('内容', default='')
     pub_time = models.DateTimeField('发表时间', auto_now_add=True)
     update_time = models.DateTimeField('更新时间', auto_now=True, null=True)
+    views = models.PositiveIntegerField('浏览量', default=0)
 
     def __str__(self):
         return self.title
@@ -56,3 +57,8 @@ class Article(models.Model):
     class Meta:
         verbose_name = "文章"
         verbose_name_plural = "文章"
+
+    # 浏览量增加函数
+    def increase_views(self):
+        self.views += 1
+        self.save(update_fields=['views'])

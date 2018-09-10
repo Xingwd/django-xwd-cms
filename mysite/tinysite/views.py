@@ -37,6 +37,9 @@ def article_detail(request, column_slug, article_slug):
     column = get_object_or_404(Column, slug=column_slug)
     article = get_object_or_404(Article, slug=article_slug)
 
+    # 浏览量 +1
+    article.increase_views()
+
     article_list = [ a for a in Article.objects.filter(column=column.id) ]
     current_article_index = article_list.index(article)
 
