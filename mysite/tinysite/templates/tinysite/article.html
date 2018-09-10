@@ -73,6 +73,30 @@
                     <li class="next"><a href="{{ next_article.get_absolute_url }}">{{ next_article.title }} <span class="glyphicon glyphicon-chevron-right"></span></a></li>
                     {% endif %}
                 </ul>
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary" data-toggle="collapse"
+                            data-target="#zanzhu">
+                        <span class="glyphicon glyphicon-usd"></span> 如果觉得文章对你有帮助，可小额赞助 <span class="glyphicon glyphicon-hand-down"></span>
+                    </button>
+
+                    <div id="zanzhu" class="collapse" style="margin-top:25px;">
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <figure class="figure">
+                                    <img src="{% static 'tinysite/assets/pay/weixinpay.jpeg' %}" class="figure-img img-fluid rounded" style="width: 250px">
+                                    <figcaption class="figure-caption text-center" style="color: green">微信</figcaption>
+                                </figure>
+                            </li>
+                            <li class="list-inline-item"> </li>
+                            <li class="list-inline-item">
+                                <figure class="figure">
+                                    <img src="{% static 'tinysite/assets/pay/zhifubaopay.jpeg' %}" class="figure-img img-fluid rounded" style="width: 250px">
+                                    <figcaption class="figure-caption text-center" style="color: deepskyblue">支付宝</figcaption>
+                                </figure>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
