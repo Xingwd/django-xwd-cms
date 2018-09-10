@@ -5,4 +5,5 @@ django==2.0.5
 django-markdown-deux
 mysqlclient
 uwsgi
+Pygments
 
