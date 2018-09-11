@@ -33,7 +33,8 @@ def index(request):
 #     })
 
 
-def article_detail(request, column_slug, article_slug):
+def article_detail(request, category_slug, column_slug, article_slug):
+    category = get_object_or_404(Category, slug=category_slug)
     column = get_object_or_404(Column, slug=column_slug)
     article = get_object_or_404(Article, slug=article_slug)
 
@@ -60,6 +61,7 @@ def article_detail(request, column_slug, article_slug):
             next_article = None
 
     return render(request, 'tinysite/article.html', {
+        'category': category,
         'column': column,
         'article': article,
         'previous_article': previous_article,

@@ -11,6 +11,7 @@ from django.urls import reverse
 
 class Category(models.Model):
     name = models.CharField('栏目分类', max_length=100)
+    slug = models.SlugField('类别网址', max_length=256, db_index=True, default='category')
 
     def __str__(self):
         return self.name
@@ -52,7 +53,7 @@ class Article(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('tinysite:article', args=[self.column.slug, str(self.slug)])
+        return reverse('tinysite:article', args=[self.column.category.slug, self.column.slug, str(self.slug)])
 
     class Meta:
         verbose_name = "文章"

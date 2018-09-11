@@ -11,5 +11,5 @@ app_name = 'tinysite'
 urlpatterns = [
     path('', views.index, name='index'),
     # path('column/<slug:column_slug>/', views.column_detail, name='column'),
-    path('column/<slug:column_slug>/<slug:article_slug>', views.article_detail, name='article'),
+    path('<slug:category_slug>/<slug:column_slug>/<slug:article_slug>', views.article_detail, name='article'),
 ]

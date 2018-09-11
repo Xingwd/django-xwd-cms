@@ -7,9 +7,10 @@ from .models import Category, Column, Article
 class CategoryAdmin(admin.ModelAdmin):
     fieldsets = [
         ('分类名称', {'fields': ['name']}),
+        ('类别网址', {'fields': ['slug']}),
     ]
 
-    list_display = ('name',)
+    list_display = ('name', 'slug')
 
 
 class ColumnAdmin(admin.ModelAdmin):
