@@ -1,7 +1,7 @@
 # 要求的python包
 
 -i https://pypi.tuna.tsinghua.edu.cn/simple
-django==2.1.1
+django==2.0.8
 django-markdown-deux
 mysqlclient
 uwsgi
